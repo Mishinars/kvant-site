@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+{% for item in news %}
+  <div>
+    <table>
+        <tr>
+    <td><img src="{{ item.image.url }}" width="250px" height="175px"></td>
+    <td><p class="text" >{{ item.text }}</p></td>
+    </tr>
+    </table>
+  </div>
+{% endfor %}
+{% endblock %}

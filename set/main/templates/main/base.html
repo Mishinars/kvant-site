@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <title>Кванториум</title> 
+    {% block head %}
+    {% endblock %}
+</head>
+<header>
+  <div class="container">
+    <div class="logo">
+    <img src="http://kompozit-ut.ru/upload/iblock/944/944478f07d2b2ea5e4b13202789298a9.jpg">
+    </div>
+    <nav>
+      <a href="{% url 'Home' %}">Главная</a>
+      <a href="{% url 'event' %}">Мастер-классы</a>
+      <a href="{% url 'news' %}">Новости</a>
+      <a href="{% url 'info' %}">Сведения о организации</a>
+    </nav>
+  </div>
+</header>
+
+  {%block content%}
+  {% endblock %}
+  <footer>
+    <p>&copy; 2023 Кванториум</p>
+  </footer> 
+</div>
+</body>
+</html>

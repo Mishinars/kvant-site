@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кванториум</title>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+    }
+
+    .logo{
+      max-height: 200px;
+    }
+
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {      
+      text-align: center;
+    }
+
+   
+    .aligncenter { 
+      text-align: center;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-evenly;
+      background-color: #213A8F;
+      width: auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      padding: 20px;
+    }
+
+    .carousel {
+      width: 800px;
+      margin: 20px auto;
+      overflow: hidden;
+      border: 8px solid #EB5C0A;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      width: 800px;
+      height: 300px;
+           
+    }
+
+    .carousel-item img {
+      width: 800px;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 70%;
+      transform: translateY(25%);
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .carousel-button:hover {
+      background-color: rgba(0, 0, 0, 0.356);
+    }
+
+    .carousel-button.prev {
+      left: 360px;
+    }
+
+    .carousel-button.next {
+      right: 360px;
+    }
+    
+    .buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .buttons button {
+      background-color: #ffffff;
+      border: 4px solid #213A8F;
+      color: rgb(0, 0, 0);
+      padding: 10px 20px;
+      border-radius: 15px;
+      margin: 0 80px;
+      width: 250px;
+      cursor: pointer;
+    }
+
+    .buttons button:hover {
+      background-color: #b1b1b15f;
+    }
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 70px;
+      margin-top: 40px;
+    }
+
+    .card {
+      width: 200px;
+      border: 2px solid rgba(0, 0, 0, 0.503);
+      border-radius: 0px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
+    }
+
+    .card a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+    }
+    
+    .card:hover {
+      transform: translateY(-5px); 
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-image {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    footer {
+      background-color: #213A8F;
+      color: #fff;
+      margin-top: 40px;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">
+    <img src="http://kompozit-ut.ru/upload/iblock/944/944478f07d2b2ea5e4b13202789298a9.jpg">
+    </div>
+    <nav>
+      <a href="{% url 'Home' %}">Главная</a>
+      <a href="{% url 'event' %}">Мастер-классы</a>
+      <a href="{% url 'news' %}">Новости</a>
+      <a href="{% url 'info' %}">Сведения о организации</a>
+    </nav>
+  </div>
+</header>
+<h2 class="aligncenter">Добро пожаловать в Кванториум!</h2>
+<main>
+  <div class="carousel">
+    <div class="carousel-track">
+        <div class="carousel-item">
+            <img src="https://avatars.mds.yandex.net/i?id=4cd52a62559f9c58b4c067e43ffc51b65c6e65b5-10639206-images-thumbs&n=13">
+        </div>
+        <div class="carousel-item">
+            <img src="https://avatars.mds.yandex.net/i?id=4cd52a62559f9c58b4c067e43ffc51b65c6e65b5-10639206-images-thumbs&n=13">
+        </div>
+        <div class="carousel-item">
+            <img src="https://avatars.mds.yandex.net/i?id=4cd52a62559f9c58b4c067e43ffc51b65c6e65b5-10639206-images-thumbs&n=13">
+        </div>
+      </div>
+    <button class="carousel-button prev">&#10094;</button>
+    <button class="carousel-button next">&#10095;</button>
+  </div> 
+
+  <div class="card-container">
+    <div class="card">
+      <a href="{% url 'news' %}">
+      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <div class="card-content">
+        <h2 class="card-title">Химия</h2>
+      </div>
+    </a>
+    </div>
+
+    <div class="card">
+      <a href="{% url 'news' %}">
+      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <div class="card-content">
+        <h2 class="card-title">Физика</h2>
+      </div>
+    </a>
+    </div>
+
+    <div class="card">
+      <a href="{% url 'news' %}">
+      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <div class="card-content">
+        <h2 class="card-title">Биология</h2>
+      </div>
+    </a>
+    </div>
+
+    <div class="card">
+      <a href="{% url 'news' %}">
+      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <div class="card-content">
+        <h2 class="card-title">Робототехника</h2>
+      </div>
+    </a>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card">
+      <a href="{% url 'news' %}">
+      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <div class="card-content">
+        <h2 class="card-title">Информационные технологии</h2>
+      </div>
+    </a>
+    </div>
+
+    <div class="card">
+      <a href="{% url 'news' %}">
+      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <div class="card-content">
+        <h2 class="card-title">Современные технологии</h2>
+      </div>
+    </a>
+    </div>
+
+    <div class="card">
+      <a href="{% url 'news' %}">
+      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <div class="card-content">
+        <h2 class="card-title">Аэра</h2>
+      </div>
+    </a>
+    </div>
+  </div>
+</div>
+</div>
+<div class="buttons">
+  <button>Расписание</button>
+  <button>Записаться</button>
+</div>
+
+</main>
+<footer>
+  <p>&copy; 2023 Кванториум</p>
+</footer>
+</body>
+</html>
+<script>
+  const carouselTrack = document.querySelector('.carousel-track');
+  const prevButton = document.querySelector('.carousel-button.prev');
+  const nextButton = document.querySelector('.carousel-button.next');
+  const itemWidth = document.querySelector('.carousel-item').offsetWidth; 
+  let currentPosition = 0; 
+  let totalItems = 3;
+  let maxPosition = totalItems - 1;
+  let autoplayInterval;
+
+  function moveCarousel(offset) {
+      currentPosition += offset;
+      if (currentPosition < 0) {
+          currentPosition = maxPosition;
+      } else if (currentPosition > maxPosition) {
+          currentPosition = 0;
+      }
+      carouselTrack.style.transform = `translateX(-${currentPosition * itemWidth}px)`;
+      }
+      function autoplay() {
+          autoplayInterval = setInterval(() => {
+              moveCarousel(1); // Переход к следующему слайду
+          }, 5000); // Интервал в миллисекундах (5 секунды)
+      }
+      prevButton.addEventListener('click', () => {
+          moveCarousel(-1);
+          clearInterval(autoplayInterval)
+          autoplay(); 
+      });
+      nextButton.addEventListener('click', () => {
+          moveCarousel(1);
+          clearInterval(autoplayInterval);
+          autoplay();
+      });
+      autoplay(); 
+ </script>
