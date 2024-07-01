@@ -1,33 +1,22 @@
 from django.db import models
 
-class Role(models.Model):
-    name = models.CharField(max_length=255)
-
-class User(models.Model):
-    last_name = models.CharField(max_length=255)
-    first_name = models.CharField(max_length=255)
-    patronymic = models.CharField(max_length=255)
-    age = models.IntegerField()
-    role = models.ForeignKey(Role, on_delete=models.CASCADE)
-    login = models.CharField(max_length=255)
-    password = models.CharField(max_length=255)
-
 class New(models.Model):
     title = models.CharField(max_length=255)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateField()
-    image =  models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='images/')
     text = models.TextField()
 
 class Event(models.Model):
     title = models.CharField(max_length=255)
-    target_audience = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='images/', default='default_image.jpg')
     event_dates = models.DateField()
-    responsible_institution = models.CharField(max_length=255)
+    min_age = models.IntegerField(default=0)
+    max_age = models.IntegerField(default=18)
     comment = models.TextField()
 
-class Connection(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    role = models.ForeignKey(Role, on_delete=models.CASCADE)
-    news = models.ForeignKey(New, on_delete=models.CASCADE)
+class Document(models.Model):
+    title = models.CharField(max_length=200)
+    file = models.FileField(upload_to='documents/')
 
+class Raspisanie(models.Model):
+    image = models.ImageField(upload_to='images/')

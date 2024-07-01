@@ -7,7 +7,8 @@
 {% endblock %}
 
 {% block content %}
-    <h1>
-    О нас
-    </h1>
+<ul> <!-- pdf_view название функции из views.py -->
+    <li><a class="docs" href="{% url 'pdf_view' %}" target="_blank">Устав Муниципального учреждения дополнительного образования "Станция юных техников" Копейского город</a></li>
+    <li><a class="docs" href="{% url 'pdf_view' %}" target="_blank">Правила внутреннего распорядка обучающихся</a></li>
+</ul>
 {% endblock %}

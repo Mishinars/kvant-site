@@ -8,13 +8,18 @@
 
 {% block content %}
 {% for item in news %}
-  <div>
+  <div class="news">
     <table>
-        <tr>
-    <td><img src="{{ item.image.url }}" width="250px" height="175px"></td>
-    <td><p class="text" >{{ item.text }}</p></td>
-    </tr>
-    </table>
+      <tr>
+      <td><h2 class="title" >{{ item.title }}</h2></td>
+      </tr>
+      <tr>
+      <td><img src="{{ item.image.url }}" class="image" width="750px" height="421px"></td>
+      </tr>
+      <tr>
+      <td><p class="text" >{{ item.text }}</p></td>
+      </tr>
+      </table>
   </div>
 {% endfor %}
 {% endblock %}

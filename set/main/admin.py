@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Role, User, New, Event
+from .models import New, Event, Document, Raspisanie
 
-admin.site.register(Role)
-admin.site.register(User)
 admin.site.register(New)
 admin.site.register(Event)
+admin.site.register(Document)
+admin.site.register(Raspisanie)

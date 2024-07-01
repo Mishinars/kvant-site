@@ -45,7 +45,13 @@
       font-weight: bold;
       padding: 20px;
     }
-
+    .video {
+      width: 800px;
+      margin: 0px auto;
+      overflow: hidden;
+      border: 8px solid #EB5C0A;
+      background-color: black;
+    }
     .carousel {
       width: 800px;
       margin: 20px auto;
@@ -92,13 +98,11 @@
     .carousel-button.next {
       right: 360px;
     }
-    
     .buttons {
       display: flex;
       justify-content: center;
       margin-top: 50px;
-    }
-
+    }      
     .buttons button {
       background-color: #ffffff;
       border: 4px solid #213A8F;
@@ -113,6 +117,17 @@
     .buttons button:hover {
       background-color: #b1b1b15f;
     }
+
+    .text-container {
+      text-align: center;
+      margin: 50px auto;
+    }
+
+    .text-container strong {
+      font-weight: bold;
+    }
+
+
     .card-container {
       display: flex;
       justify-content: center;
@@ -140,8 +155,8 @@
     }
 
     .card-image {
-      width: 100%;
-      height: 100px;
+      width: 200px;
+      height: 180px;
       object-fit: cover;
     }
 
@@ -162,6 +177,34 @@
       margin-top: 40px;
       padding: 20px;
       text-align: center;
+    }
+
+    .contact-info {
+    text-align: left; 
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-evenly; 
+      align-items: center;
+    }
+
+    .logo-footer {
+      max-width: 200px;
+      max-height: 150px; 
+    }
+
+    .copyright {
+      margin-top: 20px;
+    }
+
+    a {
+      color: #fff; 
+      text-decoration: none; 
+    }
+
+    a:hover {
+      text-decoration: underline; 
     }
   </style>
 </head>
@@ -195,14 +238,22 @@
             <img src="https://avatars.mds.yandex.net/i?id=4cd52a62559f9c58b4c067e43ffc51b65c6e65b5-10639206-images-thumbs&n=13">
         </div>
       </div>
+  </div>
+<div class="video">
+  <iframe src="https://vk.com/video_ext.php?oid=-219650733&id=456239019&hd=2" width="100%" height="480px" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+</div>
+  <div class="text-container">
+    <p><strong>"Кванториум"</strong> - это новый формат дополнительного образования для школьников, имеющих склонность к инженерному творчеству и научной работе.<br>
+    Здесь дети погружаются в мир инженерных наук, развивают творческий потенциал и учатся решать реальные задачи в команде.</p>
+</div>
+  </div>
     <button class="carousel-button prev">&#10094;</button>
     <button class="carousel-button next">&#10095;</button>
   </div> 
-
   <div class="card-container">
     <div class="card">
-      <a href="{% url 'news' %}">
-      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <a href="{% url 'khimiya' %}">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAk1BMVEX///8kICEAAAAlHyEhHR4pJicfGhshGx07OTpIRkcYExT19PQRCgyYlpd0c3QiICHDw8PZ19jg4OATEBEuLC0bFhf39/e6ubodGxwLAAP9//7c29vv7+99fX2DgYIZFxhta2zNzM1OTE2kpKRcWluvr69LSUqLios9PD2cnJw7OjtnZ2ctKiuRkZHn5+dZWFmop6gTkHCxAAAH1ElEQVR4nO2ciXLiOBCGY/kYbBwE2AYMJtwhTBIm7/90q9bhA8RwxBvLu/1VTdX4wKU/LatbrZafnhAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQZD/Df3D8w0cDv2mG/ogszcShlF4lSgkv2dNN/YRjiSxKKXWNeCehBybbu4DvAeObdtXBVoWu8sJ3ptu7v10yQ3iCki36QbfzfBOhcOmG3w3xzsVtvBF/D25Q6D3u+nmPsD4HiOScdPNfYRPEjiOIxQ4OvJLAflsurGPsVrGbuy5IMPVAb7S9dg9y1XTTf0G3GkEPe21XmC10k1UQYWo0HxQISo0H1SICs0HFaJC80GFqNB8UCEqNB9UiArNBxWiQvNBhajQfP77CkdXFY5+uEV1A8v5zkWFTisX8KtwO/3NhheutYYZX+om+rKuPly0SSvroXLeEyYiWV+4ul4whUkLi4UKBgQW60llEXu1yQtLVsyINiWDn29YbWzBhItt+VSfkEW3fN1Otuc/bAvMRjYzYcVG88AtTnAjnti4Vaw927aCZeUcs6FbOPn3wLJt79J7ajx9YtvsNTsZKwe7rDiYEcruuTDWms8blF9GS3W422Tn9ywjKL58+8FW1QiUfTH7qJFzTQg5l3gEO7e06OvpAzxFOJdHA0Itsjm/ax5B5dfHj7asJnYinFFmG4LC3fltmbhNc8V4XG7CfX78QshaN4/Yh2BE9+caVgdT9m9DmCukUenNG+pjlyyiEJ1qOrDBMIUjx2EKw1uqKj9DiN1o2+aJBwhnqHvLBL7rUqYwPfzrbaqVzAMTkttafQC34iQab2kwrOfZlhPrTJiNxyenu7HD7r6pRxtDFvFpkc4F9CNCJieh9o7FbpYVtcmIL3zw6GgGj2zhWZb3Ub0y6vBh6eWHWlcDQ5Ge0JpQOPgTx7EjsH+oRUmpObg4ryMOhvtxqfuthEKlZSSj1s6EWjSYP7WEYSX9tGQRt//V5WEAdMjAcgNf3foukzR9wt1+W4z4voA4TKqYQdudNPiUA+jQZ9GbtNxomar+6k9alJQaENhUqEzIUzWM1NnI4eV45FHP9Km7TS2VpGFGpOfvp6GAJrqQmYlBvjfISePq0DOIg9Kgs14whe1ISg14vKayS3+SYnMTJfEmd/ajPeH7gpI/4njFerPdDiP+SZjAIO98pe1blE4I6Y1ZJ+2uXoJQnlXd+Z0Z0VZ6TYZpYhMFlX7yz7boJYQTsUBNbKGdlIYk+9ICgEm8ekxhJJdbxkTtdA6YKha4cFVi05raJExVkqYXsdjN8y8/2gzGBKLowoRUqliujuNORHWbu0EUOMsZvMCO8Ukp2Dlqq/TTmEhBEQ85Mxa56LavM1E8HJiHzKqTTnONv4WxiE2ERx91pAmdxUhdPRfIemYsfnxMHTC32UmpmKef5CThS72F6uUa8nWMU4W2Tb7E9RfILP6Km2n6bXyBc3Bk8cHIVRZzZKNhpeZMIow4rrBxFxbjcr0mMgrYcEnVZH2TFm+a8AGwrK39zkIqM22QGrCtRUPNvwYbLA4pLEKEMm4pOXsaMYndvTzjBYF3OtiIn2QRLHVAUmranJCLsEgalspslTT7DEsKKOmsXXFiQl57PZ84FYXK7s8pmDgYGapQpJ/kO5WFVQ2OJ46DNx56ruJF5WooZskj1+SkFO9ilhon9qGlw/NlH87cyl+Ap/+nfKxiHd3QpNReZBBFD8tS/ZdpislDJSi3aAqiptzf2OXlDoMYplbJX/NUzQkQsZTmDhXvT5UT3XEnmpqYzxALgXI1dxhqoxcZvgmWQVkhDaWoN+i9kYFJKW7CfDF3GekVLsoKFxWFxXzEMtOI3CIqPBukli4+Y720VHbh0uq1VL6ir+AsTyo4DKBawAbZNq1CWh5pThQu8swif5Rp5W7bBJLAefrJuaRw4suMW/fDO7nm5EkpXgxnWFKKaaJFAVs5/XRK0OE6+q53FqAWSSnwiSYlpaZcEy238C94xO/1OsTTTDPYX4hHa9uEXWNPm5oTu61gZSV/x9ZXvhDFIm9IJJ6NtrL8a8qTrIaVu71Cl0sqI8XfgT+Ixp/kIxUY0aRytzHhM3XlsifXPyWoV0gnEDCwrjlLDUtK+TB0Ko/d1yVjbqNY7ehBgDQxJrNYST89dTyNo7gNO190PHJnaYwReUpNTQd2931r7xQVub/wSindOnkDfPHqJzmFFXUVj1LUb2R8emlGUmoU8zIDacIN0UUztyvM6xdFuVtsghH7PBkfFVmI7ynMsyABTw+bsFCzj9jQHz6Lg+f0uowrpOpRIeToTJjs+zw7k/EAqws1zd8lkm8iLJY7JjgMFoDZKqm9T399HyLtxsYs6jjNCcuBPLb3Kv7fqQfxMN9j0XzQnLAci/VSWeJb18AnnuOCDa2aHvkdfL4kWv9Hco/GvIcvkVWMpTXyDOnXyIRqPt3mphqYGTRH5DGNZ12SeNc8Pb95QCF0cMxYLRWxtkfms9pGmtmc8DyVKSveW568phGZaD8XfD8TItYEAlPybdnHQlYk1AV/Gl3ExixBDePo2+HoOVFs0Hfasy05Xbf+Lh7ZGmNBTv+NhEni1UQSEt+EeVOVwWG59mvhdd07GJTwRhAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQVrGP6w9e0DUstFhAAAAAElFTkSuQmCC" alt="IT-квантум" class="card-image">
       <div class="card-content">
         <h2 class="card-title">Химия</h2>
       </div>
@@ -210,8 +261,8 @@
     </div>
 
     <div class="card">
-      <a href="{% url 'news' %}">
-      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <a href="{% url 'fizika' %}">
+      <img src="https://png.pngtree.com/png-vector/20190809/ourlarge/pngtree-atom-education-physics-science-flat-color-icon-vector-icon-png-image_1652546.jpg" alt="IT-квантум" class="card-image">
       <div class="card-content">
         <h2 class="card-title">Физика</h2>
       </div>
@@ -219,8 +270,8 @@
     </div>
 
     <div class="card">
-      <a href="{% url 'news' %}">
-      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <a href="{% url 'biologiya' %}">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX5ooSweqFURSTgkbu6s0rh6nnYhaNuehTVw&s" alt="IT-квантум" class="card-image">
       <div class="card-content">
         <h2 class="card-title">Биология</h2>
       </div>
@@ -228,8 +279,8 @@
     </div>
 
     <div class="card">
-      <a href="{% url 'news' %}">
-      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <a href="{% url 'robototekhnika' %}">
+      <img src="https://img.freepik.com/premium-vector/industrial-robotic-arm-icon-black-mechanical-manipulator_53562-15876.jpg" alt="IT-квантум" class="card-image">
       <div class="card-content">
         <h2 class="card-title">Робототехника</h2>
       </div>
@@ -239,8 +290,8 @@
 
   <div class="card-container">
     <div class="card">
-      <a href="{% url 'news' %}">
-      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <a href="{% url 'info_tech' %}">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0RRlxq5bNNvWFEPWhTlniLcwMuYfnKnOIeg&s" alt="IT-квантум" class="card-image">
       <div class="card-content">
         <h2 class="card-title">Информационные технологии</h2>
       </div>
@@ -248,8 +299,8 @@
     </div>
 
     <div class="card">
-      <a href="{% url 'news' %}">
-      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <a href="{% url 'hi_tech' %}">
+      <img src="https://png.pngtree.com/png-clipart/20230401/original/pngtree-3d-printer-line-icon-png-image_9015686.png" alt="IT-квантум" class="card-image">
       <div class="card-content">
         <h2 class="card-title">Современные технологии</h2>
       </div>
@@ -257,8 +308,8 @@
     </div>
 
     <div class="card">
-      <a href="{% url 'news' %}">
-      <img src="https://via.placeholder.com/150x100" alt="IT-квантум" class="card-image">
+      <a href="{% url 'aero' %}">
+      <img src="https://cdn-icons-png.flaticon.com/512/6375/6375742.png" alt="IT-квантум" class="card-image">
       <div class="card-content">
         <h2 class="card-title">Аэра</h2>
       </div>
@@ -271,11 +322,22 @@
   <button>Расписание</button>
   <button>Записаться</button>
 </div>
-
 </main>
+
+
 <footer>
-  <p>&copy; 2023 Кванториум</p>
+  <div class="footer-content">
+    <img src="https://lh6.googleusercontent.com/proxy/LfQ4FrEbpEZaApTfnteOvP_SJQvNruTOv9emn-wE6SpN0CXzEidbDURrFRyyIhK2xOMvXhc_T6hu9alOgXM" alt="Логотип" class="logo-footer">
+    <div class="contact-info">
+      <p><strong>Адрес:</strong> ул. Красная Горнячка, 4</p>
+      <p><strong>Телефон:</strong> +7 (982) 346-45-07</p>
+      <p><strong>Группа ВКонтакте:</strong> <a href="https://vk.com/kvantkop">vk.com/kvantkop</a></p>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2024 Кванториум</p>
 </footer>
+
+
 </body>
 </html>
 <script>
@@ -299,8 +361,8 @@
       }
       function autoplay() {
           autoplayInterval = setInterval(() => {
-              moveCarousel(1); // Переход к следующему слайду
-          }, 5000); // Интервал в миллисекундах (5 секунды)
+              moveCarousel(1); 
+          }, 5000);
       }
       prevButton.addEventListener('click', () => {
           moveCarousel(-1);

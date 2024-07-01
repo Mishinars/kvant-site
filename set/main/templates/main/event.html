@@ -7,7 +7,21 @@
 {% endblock %}
 
 {% block content %}
-    <h1>
-    Мероприятия
-    </h1>
+{% for item in event %}
+<table>
+<tr>
+<td><h2 class="title" >{{ item.title }}</h2></td>
+</tr>
+<tr>
+<td><img src="{{ item.image.url }}" class="image" width="750px" height="421px"></td>
+</tr>
+<tr>
+<td><h3 class="comment" >Дата проведения:{{ item.event_dates }}<p>{{ item.min_age }}-{{ item.max_age }}лет.</p></h3></td>
+<td><h3 class="comment" ></h3></td>
+</tr>
+<tr>
+<td><p class="text" >{{ item.comment }}</p></td>
+</tr>
+</table>
+{% endfor %}
 {% endblock %}
